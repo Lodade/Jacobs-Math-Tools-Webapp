@@ -1,3 +1,12 @@
 #MainHeader {
 	text-align: center;
 }
+.TopNavBar {
+	background-color: #AEAEAE;
+	min-height: 50px;
+}
+.TopNavBar a {
+	float: left;
+	padding: 14px 16px;
+	font-size: 18px;
+}
