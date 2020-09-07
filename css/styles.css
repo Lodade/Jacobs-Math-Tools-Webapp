@@ -8,7 +8,7 @@
 	text-align: center;
 }
 #matrixDisplayArea1 {
-	background-color:#CDCDCD;
+	background-color:#D7D7D7;
 	min-height: 80px;
 	min-width: 175px;
 	margin: 0 auto;
@@ -45,7 +45,7 @@
 	color: #DF0000;
 }
 #resultMatrixDisplayArea {
-	background-color: #D5D5D5;
+	background-color: #D7D7D7;
 	min-height: 120px;
 	max-width: 300px;
 	margin: auto;
