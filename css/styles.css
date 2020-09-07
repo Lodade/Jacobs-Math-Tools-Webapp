@@ -1,3 +1,6 @@
+* {
+	font-family: Sans-serif;
+}
 #mainHeader {
 	text-align: center;
 }
@@ -79,8 +82,8 @@ fieldset {
 .matrixFormInput {
 	width: 30px;
 }
-table, td {
-	border: 1px solid black;
+td {
+	border: 1px solid #919191;
 }
 td {
 	min-width: 35px;

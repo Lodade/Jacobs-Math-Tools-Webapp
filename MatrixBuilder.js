@@ -93,6 +93,7 @@ function gatherMatrixElements() {
 	formElement.type = "number";
 	formElement.value = 0;
 	formElement.className = "matrixFormInput";
+	formElement.style.borderStyle = "none";
 	calculationPos = true;
 }
 function buildResultMatrix() {
