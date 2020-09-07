@@ -35,9 +35,30 @@
 #rightMatrixDisplay {
 	margin: auto;
 }
+#mismatchDisplayArea {
+	margin: auto;
+}
 #mismatchWarning {
 	text-align: center;
-	color: #FFFFFF;
+	color: #DF0000;
+}
+#resultMatrixDisplayArea {
+	background-color: #D5D5D5;
+	min-height: 120px;
+	max-width: 300px;
+	margin: auto;
+	text-align: center;
+}
+#calculateHolder {
+	padding-top: 10px;
+	margin: auto;
+	text-align: center;
+}
+#resultMatrixDisplay {
+	margin: auto;
+}
+#resultHeader {
+	padding-bottom: 0px;
 }
 fieldset {
 	max-width: 300px;
@@ -56,6 +77,9 @@ fieldset {
 }
 table, td {
 	border: 1px solid black;
+}
+td {
+	min-width: 35px;
 }
 a:link {
 	text-decoration: none;
