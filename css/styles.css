@@ -1,0 +1,71 @@
+#mainHeader {
+	text-align: center;
+}
+#currentPageHeader {
+	text-align: center;
+}
+#overallMatrixDisplay {
+	text-align: center;
+}
+#matrixDisplayArea1 {
+	background-color:#CDCDCD;
+	min-height: 80px;
+	min-width: 175px;
+	margin: 0 auto;
+	display: inline-block;
+	text-align: center;
+}
+#matrixDisplayArea2 {
+	background-color:#D7D7D7;
+	min-height: 80px;
+	min-width: 175px;
+	margin: 0 auto;
+	display: inline-block;
+	text-align: center;
+}
+#leftMatrixInput {
+	float: none;
+}
+#rightMatrixInput {
+	float: none;
+}
+#leftMatrixDisplay {
+	margin: auto;
+}
+#rightMatrixDisplay {
+	margin: auto;
+}
+fieldset {
+	max-width: 300px;
+}
+.topNavBar {
+	background-color: #AEAEAE;
+	min-height: 50px;
+}
+.topNavBar a {
+	float: left;
+	padding: 14px 16px;
+	font-size: 18px;
+}
+.matrixFormInput {
+	width: 30px;
+}
+table, td {
+	border: 1px solid black;
+}
+a:link {
+	text-decoration: none;
+	color: black;
+}
+a:visited {
+	text-decoration: none;
+	color: black;
+}
+a:hover {
+	text-decoration: underline;
+	color: black;
+}
+a:active {
+	text-decoration: underline;
+	color: black;
+}
