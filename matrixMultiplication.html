@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<title>Jacobs-Math-Tools-Webapp</title>
+	<link rel="stylesheet" href="styles.css">
+<meta></meta>
+</head>
+<body>
+	<h1 id="mainHeader">Jacob's Math Tools</h1>
+	<div class="topNavBar">
+		<a class="navBarItems" href="index.html">Home</a>
+		<a class="navBarItems" href="matrixMultiplication.html">Matrix Multiplier</a>
+		<a class="navBarItems">Matrix Inverter</a>
+	</div>
+	<h2 id="currentPageHeader">Matrix Multiplier</h2>
+	<div id="overallMatrixDisplay">
+		<div id="matrixDisplayArea1">
+			<form action="" name="matrixSizeForm1" oninput="buildInitialMatrices()">
+				<fieldset id="leftMatrixInput">
+					<legend>Matrix 1:</legend>
+					<label for="matrix1X">Matrix 1 X dimension</label>
+					<input type="number" id="matrix1X" name="matrix1X" value=2 min=1 max=5><br>
+					<label for="matrix1Y">Matrix 1 Y dimension</label>
+					<input type="number" id="matrix1Y" name="matrix1Y" value=2 min=1 max=5>
+				</fieldset>
+			</form>
+		</div>
+		<div id="matrixDisplayArea2">
+			<form action="" name="matrixSizeForm2" oninput="buildInitialMatrices()">
+				<fieldset id="rightMatrixInput">
+					<legend>Matrix 2:</legend>
+					<label for="matrix2X">Matrix 2 X dimension</label>
+					<input type="number" id="matrix2X" name="matrix2X" value=2 min=1 max=5><br>
+					<label for="matrix2Y">Matrix 2 Y dimension</label>
+					<input type="number" id="matrix2Y" name="matrix2Y" value=2 min=1 max=5>
+				</fieldset>
+			</form>
+		</div>
+	</div>
+</body>
+<script src="MatrixBuilder.js"></script>
+</html>
