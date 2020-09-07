@@ -66,6 +66,7 @@ fieldset {
 .topNavBar {
 	background-color: #AEAEAE;
 	min-height: 50px;
+	overflow: auto;
 }
 .topNavBar a {
 	float: left;
