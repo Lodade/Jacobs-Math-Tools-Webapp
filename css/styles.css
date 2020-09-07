@@ -35,6 +35,10 @@
 #rightMatrixDisplay {
 	margin: auto;
 }
+#mismatchWarning {
+	text-align: center;
+	color: #FFFFFF;
+}
 fieldset {
 	max-width: 300px;
 }

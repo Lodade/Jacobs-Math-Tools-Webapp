@@ -8,9 +8,16 @@ var formElement;
 var matrixCell;
 var matrixDisplayArea1;
 var matrixDisplayArea2;
+var mismatchWarning;
 function buildInitialMatrices() {
 	matrix1 = document.createElement("TABLE");
 	matrix2 = document.createElement("TABLE");
+	if(matrix1XRef.value != matrix2YRef.value)
+	{
+		mismatchWarning.style.color = "#DF0000";
+	} else {
+		mismatchWarning.style.color = "#FFFFFF";
+	}
 	matrix1.id = "leftMatrixDisplay";
 	matrix2.id = "rightMatrixDisplay";
 	var matrix1Row = document.createElement("tr");
@@ -69,6 +76,7 @@ function gatherMatrixElements() {
 	matrix2YRef = document.forms["matrixSizeForm2"]["matrix2Y"];
 	matrixDisplayArea1 = document.getElementById("matrixDisplayArea1");
 	matrixDisplayArea2 = document.getElementById("matrixDisplayArea2");
+	mismatchWarning = document.getElementById("mismatchWarning");
 	matrixCell = document.createElement("td");
 	formElement = document.createElement("input");
 	formElement.type = "number";
