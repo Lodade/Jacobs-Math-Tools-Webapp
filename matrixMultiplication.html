@@ -15,7 +15,7 @@
 	<h2 id="currentPageHeader">Matrix Multiplier</h2>
 	<div id="overallMatrixDisplay">
 		<div id="matrixDisplayArea1">
-			<form action="" name="matrixSizeForm1" oninput="buildInitialMatrices()">
+			<form action="" name="matrixSizeForm1" oninput="mainInstance.buildInitialMatrices()">
 				<fieldset id="leftMatrixInput">
 					<legend>Matrix 1:</legend>
 					<label for="matrix1X">Matrix 1 X dimension</label>
@@ -26,7 +26,7 @@
 			</form>
 		</div>
 		<div id="matrixDisplayArea2">
-			<form action="" name="matrixSizeForm2" oninput="buildInitialMatrices()">
+			<form action="" name="matrixSizeForm2" oninput="mainInstance.buildInitialMatrices()">
 				<fieldset id="rightMatrixInput">
 					<legend>Matrix 2:</legend>
 					<label for="matrix2X">Matrix 2 X dimension</label>
@@ -46,7 +46,7 @@
 		matrix will be incorrect.
 	</h3>
 	<div id="calculateHolder">
-		<button id="calculateButton" type="button" onclick="buildResultMatrix()">Recalculate</button>
+		<button id="calculateButton" type="button" onclick="mainInstance.buildResultMatrix()">Recalculate</button>
 	</div>
 	<div id="resultMatrixDisplayArea">
 		<h3 id="resultHeader">Resulting Matrix</h3>
