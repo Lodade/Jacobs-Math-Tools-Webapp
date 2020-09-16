@@ -5,6 +5,9 @@ var matrix2YRef;
 var matrix1;
 var matrix2;
 var matrix3;
+var matrix1Row;
+var matrix2Row;
+var matrix3Row
 var formElement;
 var matrixCell;
 var matrixDisplayArea1;
@@ -28,46 +31,14 @@ function buildInitialMatrices() {
 	}
 	matrix1.id = "leftMatrixDisplay";
 	matrix2.id = "rightMatrixDisplay";
-	var matrix1Row = document.createElement("tr");
-	var matrix2Row = document.createElement("tr");
+	matrix1Row = document.createElement("tr");
+	matrix2Row = document.createElement("tr");
 	matrixDisplayArea1.style.minWidth = 125 + matrix1XRef.value * 25 + "px";
 	matrixDisplayArea2.style.minWidth = 125 + matrix2XRef.value * 25 + "px";
-	for(var i = 0;i < matrix1XRef.value;i++)
-	{
-		var copy = matrixCell.cloneNode(true);
-		matrix1Row.appendChild(copy);
-	}
-	for(var i = 0;i < matrix1YRef.value;i++)
-	{
-		var copy = matrix1Row.cloneNode(true);
-		matrix1.appendChild(copy);
-	}
-	for(var i = 0;i < matrix2XRef.value;i++)
-	{
-		var copy = matrixCell.cloneNode(true);
-		matrix2Row.appendChild(copy);
-	}
-	for(var i = 0;i < matrix2YRef.value;i++)
-	{
-		var copy  = matrix2Row.cloneNode(true);
-		matrix2.appendChild(copy);
-	}
-	for(var y = 0;y < matrix1YRef.value;y++)
-	{
-		for(var x = 0;x < matrix1XRef.value;x++)
-		{
-			var clone = formElement.cloneNode(true);
-			matrix1.rows[y].cells[x].appendChild(clone);
-		}
-	}
-	for(var y = 0;y < matrix2YRef.value;y++)
-	{
-		for(var x = 0;x < matrix2XRef.value;x++)
-		{
-			var clone = formElement.cloneNode(true);
-			matrix2.rows[y].cells[x].appendChild(clone);
-		}
-	}
+	matrixDimensionBuilder(matrix1XRef.value, matrix1YRef.value, matrix1Row, matrix1, false);
+	matrixDimensionBuilder(matrix2XRef.value, matrix2YRef.value, matrix2Row, matrix2, false);
+	matrixFormBuilder(matrix1YRef.value, matrix1XRef.value, matrix1);
+	matrixFormBuilder(matrix2YRef.value, matrix2XRef.value, matrix2);
 	if(document.getElementById("leftMatrixDisplay") == null)
 	{
 		matrixDisplayArea1.appendChild(matrix1);
@@ -99,18 +70,8 @@ function gatherMatrixElements() {
 function buildResultMatrix() {
 	matrix3 = document.createElement("TABLE");
 	matrix3.id = "resultMatrixDisplay";
-	var matrix3Row = document.createElement("tr");
-	for(var i = 0;i < matrix2XRef.value;i++)
-	{
-		var copy = matrixCell.cloneNode(true);
-		copy.innerHTML = 0;
-		matrix3Row.appendChild(copy);
-	}
-	for(var i = 0;i < matrix1YRef.value;i++)
-	{
-		var copy = matrix3Row.cloneNode(true);
-		matrix3.appendChild(copy);
-	}
+	matrix3Row = document.createElement("tr");
+	matrixDimensionBuilder(matrix2XRef.value, matrix1YRef.value, matrix3Row, matrix3, true);
 	if(calculationPos == true)
 	{
 		for(var y = 0;y < matrix1YRef.value;y++)
@@ -132,6 +93,32 @@ function buildResultMatrix() {
 		resultMatrixDisplayArea.appendChild(matrix3);
 	} else {
 		resultMatrixDisplayArea.replaceChild(matrix3,document.getElementById("resultMatrixDisplay"));
+	}
+}
+function matrixDimensionBuilder(rowWidth, tableHeight, rowObject, currentMatrix, isResult){
+	for(let i = 0;i < rowWidth;i++)
+	{
+		let copy = matrixCell.cloneNode(true);
+		if(isResult)
+		{
+			copy.innerHTML = 0;
+		}
+		rowObject.appendChild(copy);
+	}
+	for(var i = 0;i < tableHeight;i++)
+	{
+		let copy = rowObject.cloneNode(true);
+		currentMatrix.appendChild(copy);
+	}
+}
+function matrixFormBuilder(matrixHeight, matrixWidth, matrix){
+	for(var y = 0;y < matrixHeight;y++)
+	{
+		for(var x = 0;x < matrixWidth;x++)
+		{
+			var clone = formElement.cloneNode(true);
+			matrix.rows[y].cells[x].appendChild(clone);
+		}
 	}
 }
 gatherMatrixElements();
